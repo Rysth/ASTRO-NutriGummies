@@ -1,131 +1,715 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+const title =
+  "NutriGummies - Gomitas Saludables en Guayaquil, Ecuador | Vitaminas y Suplementos Naturales";
+const description =
+  "Compra gomitas de vitaminas NutriGummies en Guayaquil, Ecuador. Suplementos veganos, probióticos y multivitamínicos con sabor delicioso. Envío a todo Ecuador. Diseñado por RysthDesign.";
+
+const products = [
+  {
+    name: "Night Gummies",
+    subtitle: "Descanso Profundo",
+    price: 25,
+    oldPrice: 30,
+    bgColor: "bg-purple-50",
+    overlayColor: "bg-gradient-to-b from-transparent to-purple-100/50",
+    textColor: "text-night-purple",
+    btnColor: "bg-night-purple hover:bg-purple-800 shadow-night-purple/20",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuA_Lh97sN2UGg5KGR8rtUVOOZ38v9ODPVMDDoCistlHy5JmDaHTwQow_3biNxuSHE2CWk4z6itmDUdLU9igMlab_6mFpQsjVdpXrksoznSrayeCzvssj2VGQ53MuOHyHnbm5ZxGjQDKS74mzzSA2IliWB02BSvdgWYROjk7QENKG98ot7XaY5kYhqfMuinzs4aRcJ4H_w-m__DDq8xKyOE8dvpKq9XmoO8nPrheImH0Zk-bj_nbBFuMoSrms5Dijz2DfVxxO-4qB8Q",
+    alt: "Botella de gomitas NutriGummies Night para dormir mejor en Guayaquil",
+  },
+  {
+    name: "Morning Gummies",
+    subtitle: "Energía Natural",
+    price: 25,
+    oldPrice: 30,
+    bgColor: "bg-orange-50",
+    overlayColor: "bg-gradient-to-b from-transparent to-orange-100/50",
+    textColor: "text-morning-orange",
+    btnColor: "bg-morning-orange hover:bg-orange-600 shadow-morning-orange/20",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBpCE1_jPE7LKwkjB9tFoL9Tzv1c0S5rdXdrdXBsX9zdBCvwoqUGdxZDQ1MQkbGNLL9xom5QMyDYsGbfc33oGcmBCbgHYTA_hEwQpOrUONnf0W-S3zgqHHxJuooQVhdHnSo4TTvgFqXIlOzDFm7OYcsM5DG5azaZqfW0tIam0KXk28mK-rOUizCDpkKw5i3Q02x7JfMS_icmAF-hdTAqyKqk0Z5w9pi9Vf9ltOYTmW5L-upsdEuBqJ4FGB-qhmVDimeDAXwfNYKZF8",
+    alt: "Botella de gomitas NutriGummies Morning para energía natural en Ecuador",
+  },
+  {
+    name: "Probiotic Gummies",
+    subtitle: "Salud Digestiva",
+    price: 20,
+    oldPrice: 25,
+    bgColor: "bg-green-50",
+    overlayColor: "bg-gradient-to-b from-transparent to-green-100/50",
+    textColor: "text-probiotic-green",
+    btnColor: "bg-probiotic-green hover:bg-green-700 shadow-probiotic-green/20",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAaNTQUxdD61-PikLurogdUPxXV2TCSWAnIgIiL7jp91csIDxG570Za9N0LKf3RU4MCSCAiG3S44WV5SfzKNs7goGslXw49mFJ-bZfUrBZslzxbl2ra_gdH4mACamm4Var6J_xrQ6yUShLAztR_K7tR9sms8GG8UoMZTH199dwfbLiM1_Km9h2qigw91EwwHqKBianr2blD-cYqUYxiB_SoOzrh7YQHlecRnCrkRtfMrtFimk2xGzt3OegoKVzPjsb5cP6wJPN9oVI",
+    alt: "Botella de gomitas probióticas NutriGummies para salud digestiva",
+  },
+  {
+    name: "Multi-Vit Gummies",
+    subtitle: "Kids & Family",
+    price: 16,
+    oldPrice: 20,
+    bgColor: "bg-blue-50",
+    overlayColor: "bg-gradient-to-b from-transparent to-blue-100/50",
+    textColor: "text-multi-blue",
+    btnColor: "bg-multi-blue hover:bg-blue-600 shadow-multi-blue/20",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDhQNOCc1BBYQH1Csho-Q6OYIXQkqFIAisOez-jlbcTxzr3NqRHrKUT8hMIhv9lT4Qq8jwdRedtgFjdDqE4bv9eeRxmauFb-XbzUSxIlDJMPDCA4M_D76PSlqTOP9Vg_Tt3mmNelyCF6jBb116YcYWvY2jHJ4Grh1iWWz26Lq7z2L2YkzE-WVZd2Pdg7SBr2zNeZtoA3JPR9AuO9pGq6Nn1Ud1Ttj1weI4rW5WHm_JEEqCHZ96Y-BCys7MFfNeHCrDBNt-v5pIDBDk",
+    alt: "Botella de multivitaminas NutriGummies para niños y familia en Ecuador",
+  },
+];
+
+const benefits = [
+  {
+    emoji: "🍇",
+    title: "Extracto de Uva",
+    description: "Rico en antioxidantes naturales para proteger tus células.",
+    bgColor: "bg-purple-50",
+    borderColor: "border-purple-100",
+  },
+  {
+    emoji: "🌿",
+    title: "Ashwagandha",
+    description: "Adaptógeno antiguo para reducir el estrés y la ansiedad.",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-100",
+  },
+  {
+    emoji: "🍋",
+    title: "Limón Real",
+    description: "Vitamina C y frescura natural para tu digestión.",
+    bgColor: "bg-yellow-50",
+    borderColor: "border-yellow-100",
+  },
+  {
+    emoji: "🧬",
+    title: "Probióticos",
+    description: "Cultivos vivos para una flora intestinal saludable.",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-100",
+  },
+];
+
+const whatsappLink = "https://wa.me/593988949117";
 ---
 
-<Layout title="RysthDesign's Component Library">
-  <div class="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
-    <!-- Header -->
-    <header class="py-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-        Landing Page Component Library
-      </h1>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto px-4">
-        Explore our collection of beautiful, responsive components for building stunning landing pages
-      </p>
-    </header>
-
-    <!-- Component Categories Grid -->
-    <section class="max-w-7xl mx-auto px-4 pb-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Navigation Bars Card -->
+<Layout title={title} description={description}>
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- NAVBAR                                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-surface-light/95 backdrop-blur-md shadow-sm border-b border-slate-100"
+    aria-label="Navegación principal"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
         <a
-          href="/navbars"
-          class="group block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
+          href="/"
+          class="flex items-center gap-2"
+          aria-label="NutriGummies Inicio"
         >
-          <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-8 text-white">
-            <i class="bx bx-navigation text-5xl mb-4"></i>
-            <h2 class="text-2xl font-bold">Navigation Bars</h2>
+          <div
+            class="w-10 h-10 bg-primary rounded-xl rotate-3 flex items-center justify-center text-white font-display font-bold text-xl shadow-lg shadow-primary/30"
+          >
+            N
           </div>
-          <div class="p-6">
-            <p class="text-gray-600 mb-4">
-              3 unique, responsive navbar designs - from minimal to feature-rich
-            </p>
-            <div class="flex items-center text-purple-600 font-semibold group-hover:gap-2 transition-all">
-              View Templates
-              <i class="bx bx-right-arrow-alt text-2xl group-hover:translate-x-1 transition-transform"></i>
-            </div>
-          </div>
+          <span
+            class="font-display font-extrabold text-2xl text-slate-800 tracking-tight"
+          >
+            NutriGummies
+          </span>
         </a>
 
-        <!-- Hero Sections Card -->
-        <a
-          href="/heroes"
-          class="group block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 opacity-50 cursor-not-allowed pointer-events-none"
-        >
-          <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white">
-            <i class="bx bx-layout text-5xl mb-4"></i>
-            <h2 class="text-2xl font-bold">Hero Sections</h2>
-          </div>
-          <div class="p-6">
-            <p class="text-gray-600 mb-4">
-              3 stunning hero section layouts to capture attention
-            </p>
-            <div class="flex items-center text-gray-400 font-semibold">
-              Coming Soon
-            </div>
-          </div>
-        </a>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            class="font-bold text-slate-600 hover:text-primary transition"
+            href="#productos"
+          >
+            Productos
+          </a>
+          <a
+            class="font-bold text-slate-600 hover:text-primary transition"
+            href="#beneficios"
+          >
+            Beneficios
+          </a>
+          <a
+            class="font-bold text-slate-600 hover:text-primary transition"
+            href="#combos"
+          >
+            Combos
+          </a>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-bold transition transform hover:scale-105"
+          >
+            Comprar Ahora
+          </a>
+        </div>
 
-        <!-- About Sections Card -->
-        <a
-          href="/about"
-          class="group block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 opacity-50 cursor-not-allowed pointer-events-none"
-        >
-          <div class="bg-gradient-to-br from-green-500 to-green-600 p-8 text-white">
-            <i class="bx bx-info-circle text-5xl mb-4"></i>
-            <h2 class="text-2xl font-bold">About Sections</h2>
-          </div>
-          <div class="p-6">
-            <p class="text-gray-600 mb-4">
-              3 creative ways to showcase your story and team
-            </p>
-            <div class="flex items-center text-gray-400 font-semibold">
-              Coming Soon
-            </div>
-          </div>
-        </a>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button
+            id="mobile-menu-btn"
+            class="text-slate-600 hover:text-primary focus:outline-none"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
 
-        <!-- Footers Card -->
+    <!-- Mobile Navigation -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden bg-white border-t border-slate-100 shadow-lg"
+    >
+      <div class="px-4 py-6 space-y-4">
         <a
-          href="/footers"
-          class="group block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 opacity-50 cursor-not-allowed pointer-events-none"
+          class="block font-bold text-slate-600 hover:text-primary transition py-2"
+          href="#productos"
         >
-          <div class="bg-gradient-to-br from-orange-500 to-orange-600 p-8 text-white">
-            <i class="bx bx-dock-bottom text-5xl mb-4"></i>
-            <h2 class="text-2xl font-bold">Footers</h2>
-          </div>
-          <div class="p-6">
-            <p class="text-gray-600 mb-4">
-              3 professional footer designs for your site
-            </p>
-            <div class="flex items-center text-gray-400 font-semibold">
-              Coming Soon
-            </div>
-          </div>
+          Productos
         </a>
+        <a
+          class="block font-bold text-slate-600 hover:text-primary transition py-2"
+          href="#beneficios"
+        >
+          Beneficios
+        </a>
+        <a
+          class="block font-bold text-slate-600 hover:text-primary transition py-2"
+          href="#combos"
+        >
+          Combos
+        </a>
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block bg-slate-900 text-white text-center px-6 py-3 rounded-full font-bold transition"
+        >
+          Comprar Ahora
+        </a>
+      </div>
+    </div>
+  </nav>
 
-        <!-- More Coming Soon Card -->
-        <div class="block bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-dashed border-gray-300">
-          <div class="bg-gradient-to-br from-gray-400 to-gray-500 p-8 text-white">
-            <i class="bx bx-plus-circle text-5xl mb-4"></i>
-            <h2 class="text-2xl font-bold">More Components</h2>
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- HERO SECTION                                -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section
+    class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-soft-purple via-white to-white"
+  >
+    <div
+      class="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-night-purple/10 rounded-full blur-3xl"
+      aria-hidden="true"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <!-- Hero Text Content -->
+        <div class="flex-1 text-center lg:text-left z-10">
+          <!-- Rating -->
+          <div
+            class="flex items-center justify-center lg:justify-start gap-1 mb-4"
+          >
+            {
+              Array(5)
+                .fill(null)
+                .map(() => (
+                  <span class="material-symbols-outlined text-yellow-400 text-xl filled">
+                    star
+                  </span>
+                ))
+            }
+            <span class="text-sm font-bold text-slate-500 ml-2"
+              >4.9/5 de 500+ reseñas</span
+            >
           </div>
-          <div class="p-6">
-            <p class="text-gray-600 mb-4">
-              Additional sections and components coming soon
-            </p>
-            <div class="flex items-center text-gray-500 font-semibold">
-              In Development
+
+          <h1
+            class="font-display font-black text-5xl md:text-6xl lg:text-7xl leading-none mb-6 text-slate-900"
+          >
+            Descubre <br /><span class="text-night-purple">Night Gummies</span>
+          </h1>
+
+          <p
+            class="text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium"
+          >
+            La forma más deliciosa de dormir mejor. Gomas veganas con sabor a
+            uva para un descanso reparador. Disponibles en Guayaquil y todo
+            Ecuador.
+          </p>
+
+          <!-- Benefits Checklist -->
+          <div class="space-y-3 mb-10 max-w-md mx-auto lg:mx-0">
+            {
+              [
+                "Ayuda a conciliar el sueño más rápido",
+                "Relajación muscular profunda con Magnesio",
+                "Despierta renovado sin somnolencia",
+                "Delicioso sabor natural a Uva",
+              ].map((benefit) => (
+                <div class="flex items-center gap-3">
+                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm font-bold">
+                      check
+                    </span>
+                  </span>
+                  <span class="text-slate-700 font-bold">{benefit}</span>
+                </div>
+              ))
+            }
+          </div>
+
+          <!-- CTA Buttons -->
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+          >
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-night-purple hover:bg-purple-800 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-purple-500/20 transition transform hover:-translate-y-1 w-full sm:w-auto text-center"
+            >
+              Comprar Night Gummies
+            </a>
+            <a
+              class="px-10 py-4 rounded-full font-bold text-lg border-2 border-slate-200 hover:border-night-purple text-slate-600 hover:text-night-purple transition w-full sm:w-auto flex items-center justify-center gap-2"
+              href="#productos"
+            >
+              Ver Todos
+              <span class="material-symbols-outlined">arrow_downward</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div
+            class="mt-8 flex items-center justify-center lg:justify-start gap-6 opacity-70"
+          >
+            <div class="flex flex-col items-center">
+              <span class="material-symbols-outlined text-slate-800 mb-1"
+                >spa</span
+              >
+              <span class="text-[10px] uppercase font-bold tracking-wider"
+                >Vegano</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="material-symbols-outlined text-slate-800 mb-1"
+                >science</span
+              >
+              <span class="text-[10px] uppercase font-bold tracking-wider"
+                >Sin GMO</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="material-symbols-outlined text-slate-800 mb-1"
+                >cruelty_free</span
+              >
+              <span class="text-[10px] uppercase font-bold tracking-wider"
+                >Cruelty Free</span
+              >
             </div>
           </div>
         </div>
 
+        <!-- Hero Image -->
+        <div class="flex-1 relative z-10 flex justify-center items-center">
+          <div
+            class="relative w-full max-w-md aspect-square flex items-center justify-center"
+          >
+            <div
+              class="absolute inset-0 bg-white rounded-full shadow-2xl opacity-60"
+            >
+            </div>
+            <div
+              class="absolute inset-4 bg-gradient-to-tr from-purple-100 to-blue-50 rounded-full"
+            >
+            </div>
+            <img
+              alt="NutriGummies Night Version - Gomitas para dormir mejor en Guayaquil Ecuador"
+              class="relative z-20 w-[85%] h-auto object-contain drop-shadow-2xl float-animation"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Lh97sN2UGg5KGR8rtUVOOZ38v9ODPVMDDoCistlHy5JmDaHTwQow_3biNxuSHE2CWk4z6itmDUdLU9igMlab_6mFpQsjVdpXrksoznSrayeCzvssj2VGQ53MuOHyHnbm5ZxGjQDKS74mzzSA2IliWB02BSvdgWYROjk7QENKG98ot7XaY5kYhqfMuinzs4aRcJ4H_w-m__DDq8xKyOE8dvpKq9XmoO8nPrheImH0Zk-bj_nbBFuMoSrms5Dijz2DfVxxO-4qB8Q"
+              width="400"
+              height="400"
+              loading="eager"
+            />
+            <div
+              class="absolute top-10 left-0 bg-white/90 backdrop-blur p-3 rounded-2xl shadow-lg border border-purple-100 animate-bounce"
+              style="animation-duration: 3s;"
+              aria-hidden="true"
+            >
+              <span class="text-2xl">🍇</span>
+            </div>
+            <div
+              class="absolute bottom-20 right-0 bg-white/90 backdrop-blur p-3 rounded-2xl shadow-lg border border-purple-100 animate-bounce"
+              style="animation-duration: 4s;"
+              aria-hidden="true"
+            >
+              <span class="text-2xl">🌙</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer Info -->
-    <footer class="text-center py-8 text-gray-600">
-      <p>Built with Astro, Tailwind CSS, and DaisyUI</p>
-      <a
-        href="http://www.rysthdesign.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 mt-4 text-purple-600 hover:text-purple-700 font-semibold"
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- BENEFICIOS SECTION                          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="py-20 bg-white" id="beneficios">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display font-extrabold text-4xl text-slate-900 mb-4">
+          El Poder detrás de cada Gomita
+        </h2>
+        <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+          Ingredientes naturales seleccionados para potenciar tu bienestar en
+          Guayaquil y todo Ecuador.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        {
+          benefits.map((item) => (
+            <div class="flex flex-col items-center text-center group">
+              <div
+                class={`w-32 h-32 rounded-3xl ${item.bgColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm border ${item.borderColor}`}
+              >
+                <span class="text-6xl">{item.emoji}</span>
+              </div>
+              <h3 class="font-bold text-xl text-slate-900 mb-2">
+                {item.title}
+              </h3>
+              <p class="text-sm text-slate-500 leading-relaxed px-4">
+                {item.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- PRODUCTOS SECTION                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="py-24 bg-soft-blue/30 relative" id="productos">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display font-extrabold text-4xl text-slate-900 mb-4">
+          Nuestra Colección Completa
+        </h2>
+        <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+          Gomitas de vitaminas premium disponibles en Guayaquil con envío a todo
+          Ecuador.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          products.map((product) => (
+            <article class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100">
+              <div
+                class={`w-full ${product.bgColor} rounded-2xl h-60 flex items-center justify-center mb-6 relative overflow-hidden`}
+              >
+                <div
+                  class={`absolute inset-0 ${product.overlayColor} opacity-0 group-hover:opacity-100 transition-opacity`}
+                />
+                <img
+                  alt={product.alt}
+                  class="h-48 object-contain transform group-hover:scale-110 group-hover:rotate-3 transition duration-500"
+                  src={product.image}
+                  width="192"
+                  height="192"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="font-display font-bold text-xl text-slate-900 mb-1">
+                {product.name}
+              </h3>
+              <p class={`${product.textColor} font-bold text-sm mb-4`}>
+                {product.subtitle}
+              </p>
+              <div class="mt-auto w-full">
+                <div class="flex justify-center items-baseline gap-2 mb-4">
+                  <span class="text-2xl font-bold text-slate-900">
+                    ${product.price}
+                  </span>
+                  <span class="text-sm text-slate-400 line-through">
+                    ${product.oldPrice}
+                  </span>
+                </div>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={`w-full py-3 rounded-xl ${product.btnColor} text-white font-bold transition shadow-lg flex items-center justify-center gap-2`}
+                >
+                  Agregar{" "}
+                  <span class="material-symbols-outlined text-sm">
+                    shopping_cart
+                  </span>
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- COMBOS / BUNDLES SECTION                    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="py-20 bg-white" id="combos">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center mb-12">
+        <h2
+          class="font-display font-black text-4xl text-slate-900 text-center mb-4"
+        >
+          Bundles <span class="gradient-text">Exclusivos</span>
+        </h2>
+        <p class="text-slate-500 text-center">
+          Ahorra más llevando tus combinaciones favoritas. Envío disponible en
+          Guayaquil.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Combo Día y Noche -->
+        <article
+          class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden border border-slate-100"
+        >
+          <div
+            class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-20"
+          >
+            AHORRA $10
+          </div>
+          <div class="w-full md:w-1/2">
+            <img
+              alt="Combo Día y Noche NutriGummies - Energía y descanso en Guayaquil"
+              class="w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL78ATGAWLhZn6QHlTjx-etTAtmPmX7Hiz8eUOwyq_nbq9ozeOhALqCWfviiGvXoY2ubGmqJDpBc9SBvefWS9oo_u1Ih8QMmbD37qVbvH39aE7V04_JD51JahRfpnDiMOdFwVKbM53suDvwXqXlW0pL62EtDtDJJ0mFaRCE7dxCkZCKFYsQm-Hq8P4-XJGPLdam2qJte1aBeDa_ZuuNEUYda6WgTuxrudmh4b4kUNvJJLRz3o90TczIbOyS_c98CDUfhrFa0_flYE"
+              width="400"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div class="w-full md:w-1/2 flex flex-col justify-center">
+            <h3 class="font-display font-bold text-2xl text-slate-900 mb-2">
+              Combo Día y Noche
+            </h3>
+            <p class="text-sm text-slate-500 mb-6">Energía AM + Descanso PM.</p>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-4xl font-display font-black text-slate-900"
+                >$40</span
+              >
+              <span class="text-lg text-slate-400 line-through">$50</span>
+            </div>
+            <a
+              class="w-full bg-slate-900 text-white py-3 px-6 rounded-xl font-bold hover:bg-primary transition text-center shadow-lg"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Comprar Combo
+            </a>
+          </div>
+        </article>
+
+        <!-- Combo Bienestar -->
+        <article
+          class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden border border-slate-100"
+        >
+          <div
+            class="absolute top-4 left-4 bg-probiotic-green text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-20"
+          >
+            AHORRA $6
+          </div>
+          <div class="w-full md:w-1/2 order-1 md:order-2">
+            <img
+              alt="Combo Bienestar NutriGummies - Digestión y vitaminas en Ecuador"
+              class="w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTWFzNhDeuKFYKNgyFmcCI4lIa1zX3Ah6KJqMkOUKYy-TTd-td2yPmPROp37ZgGGEZtxXt1cZMeJRWbNBW3AgAC-m_0bwT6ffvEPSy6dOE1AMv3dcN52FEJBm78C3HtINzitZgjDdhEpYuSNBJz-FLJdztVtgqFrZvq2XjM5AZjmXL6tX63eAVwqgJm8mOYmEIzJNLicuygzxWkYDlh6CipxsXsKkyQ8wGgYfePxj5VSRV7voTiIIg12l34UQXCbOR8MfmOdFjPWw"
+              width="400"
+              height="300"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="w-full md:w-1/2 order-2 md:order-1 flex flex-col justify-center"
+          >
+            <h3 class="font-display font-bold text-2xl text-slate-900 mb-2">
+              Combo Bienestar
+            </h3>
+            <p class="text-sm text-slate-500 mb-6">Digestión + Vitaminas.</p>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-4xl font-display font-black text-slate-900"
+                >$35</span
+              >
+              <span class="text-lg text-slate-400 line-through">$41</span>
+            </div>
+            <a
+              class="w-full bg-probiotic-green text-white py-3 px-6 rounded-xl font-bold hover:bg-green-700 transition text-center shadow-lg"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Comprar Combo
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FOOTER                                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <footer class="bg-white border-t border-slate-100 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <!-- Brand Column -->
+        <div class="col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div
+              class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-display font-bold text-lg"
+            >
+              N
+            </div>
+            <span
+              class="font-display font-bold text-xl text-slate-900 tracking-tight"
+            >
+              NutriGummies
+            </span>
+          </div>
+          <p class="text-slate-500 text-sm mb-6 max-w-sm">
+            Suplementos premium diseñados para un estilo de vida moderno y
+            saludable. Disponibles en Guayaquil, Ecuador.
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary hover:text-white transition text-slate-400"
+              href="#"
+              aria-label="Facebook de NutriGummies"
+            >
+              <span class="material-symbols-outlined text-sm">facebook</span>
+            </a>
+            <a
+              class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center hover:bg-accent hover:text-white transition text-slate-400"
+              href="#"
+              aria-label="Instagram de NutriGummies"
+            >
+              <span class="material-symbols-outlined text-sm">camera_alt</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="col-span-1">
+          <h4 class="font-bold text-slate-900 mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li>
+              <a class="hover:text-primary transition" href="#productos"
+                >Todos los Productos</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#combos"
+                >Combos &amp; Ofertas</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#beneficios"
+                >Ingredientes</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="col-span-1">
+          <h4 class="font-bold text-slate-900 mb-4">Contáctanos</h4>
+          <div class="flex flex-col gap-3">
+            <a
+              class="flex items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition group border border-green-100"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="material-symbols-outlined text-green-600 mr-3"
+                >chat</span
+              >
+              <div>
+                <span class="block text-xs text-slate-400">Ventas Directas</span
+                >
+                <span class="font-bold text-slate-700">0988 949 117</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div
+        class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400"
       >
-        <i class="bx bx-link-external"></i>
-        Visit RysthDesign.com
-      </a>
-    </footer>
-  </div>
+        <p>
+          &copy; {new Date().getFullYear()} NutriGummies. Todos los derechos reservados.
+          Sitio desarrollado por
+          <a
+            href="https://www.rysthdesign.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary hover:underline font-semibold"
+          >
+            RysthDesign
+          </a>
+        </p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a class="hover:text-primary" href="#">Privacidad</a>
+          <a class="hover:text-primary" href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </Layout>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn?.addEventListener("click", () => {
+    const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", String(!isExpanded));
+    mobileMenu?.classList.toggle("hidden");
+
+    const icon = menuBtn.querySelector(".material-symbols-outlined");
+    if (icon) {
+      icon.textContent = isExpanded ? "menu" : "close";
+    }
+  });
+
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      menuBtn?.setAttribute("aria-expanded", "false");
+      const icon = menuBtn?.querySelector(".material-symbols-outlined");
+      if (icon) icon.textContent = "menu";
+    });
+  });
+</script>

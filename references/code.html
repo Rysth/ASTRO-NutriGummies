@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NutriGummies - Gomitas Saludables</title>
+<meta content="NutriGummies: Gomitas de vitaminas deliciosas y saludables para toda la familia." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4361EE", // Cobalt Blue
+                        secondary: "#4CC9F0", // Sky Blue
+                        accent: "#F72585", // Pinkish accent
+                        "night-purple": "#7209B7",
+                        "morning-orange": "#FB8500",
+                        "probiotic-green": "#38B000",
+                        "multi-blue": "#4895EF",
+                        "soft-pink": "#FFEDF2",
+                        "soft-blue": "#E0F2FE",
+                        "soft-purple": "#F3E8FF",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E293B",
+                        "goli-red": "#D62828", // Inspired by reference but adapted
+                    },
+                    fontFamily: {
+                        display: ["Nunito", "sans-serif"],
+                        body: ["Quicksand", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': "1.5rem",
+                        '2xl': "2rem",
+                        '3xl': "3rem",
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'glow': '0 0 20px rgba(67, 97, 238, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation {
+            animation: float 5s ease-in-out infinite;
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #4361EE, #F72585);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-body transition-colors duration-300">
+<nav class="fixed top-0 w-full z-50 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-md shadow-sm border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-xl rotate-3 flex items-center justify-center text-white font-display font-bold text-xl shadow-lg shadow-primary/30">
+                        N
+                    </div>
+<span class="font-display font-extrabold text-2xl text-slate-800 dark:text-white tracking-tight">NutriGummies</span>
+</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-bold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-secondary transition" href="#productos">Productos</a>
+<a class="font-bold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-secondary transition" href="#beneficios">Beneficios</a>
+<a class="font-bold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-secondary transition" href="#combos">Combos</a>
+<button class="bg-slate-900 dark:bg-primary hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-bold transition transform hover:scale-105">
+                        Comprar Ahora
+                    </button>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-soft-purple via-white to-white dark:from-slate-900 dark:via-slate-900 dark:to-background-dark">
+<div class="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-night-purple/10 rounded-full blur-3xl"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<div class="flex-1 text-center lg:text-left z-10">
+<div class="flex items-center justify-center lg:justify-start gap-1 mb-4">
+<span class="material-symbols-outlined text-yellow-400 text-xl filled">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-xl filled">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-xl filled">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-xl filled">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-xl filled">star</span>
+<span class="text-sm font-bold text-slate-500 ml-2">4.9/5 de 500+ reseñas</span>
+</div>
+<h1 class="font-display font-black text-5xl md:text-6xl lg:text-7xl leading-none mb-6 text-slate-900 dark:text-white">
+                    Descubre <br/><span class="text-night-purple">Night Gummies</span>
+</h1>
+<p class="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
+                    La forma más deliciosa de dormir mejor. Gomas veganas con sabor a uva para un descanso reparador.
+                </p>
+<div class="space-y-3 mb-10 max-w-md mx-auto lg:mx-0">
+<div class="flex items-center gap-3">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="text-slate-700 dark:text-slate-200 font-bold">Ayuda a conciliar el sueño más rápido</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="text-slate-700 dark:text-slate-200 font-bold">Relajación muscular profunda con Magnesio</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="text-slate-700 dark:text-slate-200 font-bold">Despierta renovado sin somnolencia</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</span>
+<span class="text-slate-700 dark:text-slate-200 font-bold">Delicioso sabor natural a Uva</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<button class="bg-night-purple hover:bg-purple-800 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-purple-500/20 transition transform hover:-translate-y-1 w-full sm:w-auto">
+                        Comprar Night Gummies
+                    </button>
+<a class="px-10 py-4 rounded-full font-bold text-lg border-2 border-slate-200 hover:border-night-purple text-slate-600 hover:text-night-purple transition w-full sm:w-auto flex items-center justify-center gap-2" href="#productos">
+                        Ver Todos
+                        <span class="material-symbols-outlined">arrow_downward</span>
+</a>
+</div>
+<div class="mt-8 flex items-center justify-center lg:justify-start gap-6 opacity-70">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-800 dark:text-white mb-1">spa</span>
+<span class="text-[10px] uppercase font-bold tracking-wider">Vegano</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-800 dark:text-white mb-1">science</span>
+<span class="text-[10px] uppercase font-bold tracking-wider">Sin GMO</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-slate-800 dark:text-white mb-1">cruelty_free</span>
+<span class="text-[10px] uppercase font-bold tracking-wider">Cruelty Free</span>
+</div>
+</div>
+</div>
+<div class="flex-1 relative z-10 flex justify-center items-center">
+<div class="relative w-full max-w-md aspect-square flex items-center justify-center">
+<div class="absolute inset-0 bg-white dark:bg-slate-800 rounded-full shadow-2xl opacity-60 dark:opacity-40"></div>
+<div class="absolute inset-4 bg-gradient-to-tr from-purple-100 to-blue-50 dark:from-slate-700 dark:to-slate-800 rounded-full"></div>
+<img alt="NutriGummies Night Version Bottle" class="relative z-20 w-[85%] h-auto object-contain drop-shadow-2xl float-animation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Lh97sN2UGg5KGR8rtUVOOZ38v9ODPVMDDoCistlHy5JmDaHTwQow_3biNxuSHE2CWk4z6itmDUdLU9igMlab_6mFpQsjVdpXrksoznSrayeCzvssj2VGQ53MuOHyHnbm5ZxGjQDKS74mzzSA2IliWB02BSvdgWYROjk7QENKG98ot7XaY5kYhqfMuinzs4aRcJ4H_w-m__DDq8xKyOE8dvpKq9XmoO8nPrheImH0Zk-bj_nbBFuMoSrms5Dijz2DfVxxO-4qB8Q"/>
+<div class="absolute top-10 left-0 bg-white/90 dark:bg-slate-800/90 backdrop-blur p-3 rounded-2xl shadow-lg border border-purple-100 dark:border-slate-700 animate-bounce" style="animation-duration: 3s;">
+<span class="text-2xl">🍇</span>
+</div>
+<div class="absolute bottom-20 right-0 bg-white/90 dark:bg-slate-800/90 backdrop-blur p-3 rounded-2xl shadow-lg border border-purple-100 dark:border-slate-700 animate-bounce" style="animation-duration: 4s;">
+<span class="text-2xl">🌙</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white dark:bg-slate-900" id="beneficios">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-display font-extrabold text-4xl text-slate-900 dark:text-white mb-4">El Poder detrás de cada Gomita</h2>
+<p class="text-lg text-slate-500 max-w-2xl mx-auto">Ingredientes naturales seleccionados para potenciar tu bienestar.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+<div class="flex flex-col items-center text-center group">
+<div class="w-32 h-32 rounded-3xl bg-purple-50 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm border border-purple-100 dark:border-slate-700">
+<span class="text-6xl">🍇</span>
+</div>
+<h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Extracto de Uva</h3>
+<p class="text-sm text-slate-500 leading-relaxed px-4">Rico en antioxidantes naturales para proteger tus células.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-32 h-32 rounded-3xl bg-green-50 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm border border-green-100 dark:border-slate-700">
+<span class="text-6xl">🌿</span>
+</div>
+<h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Ashwagandha</h3>
+<p class="text-sm text-slate-500 leading-relaxed px-4">Adaptógeno antiguo para reducir el estrés y la ansiedad.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-32 h-32 rounded-3xl bg-yellow-50 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm border border-yellow-100 dark:border-slate-700">
+<span class="text-6xl">🍋</span>
+</div>
+<h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Limón Real</h3>
+<p class="text-sm text-slate-500 leading-relaxed px-4">Vitamina C y frescura natural para tu digestión.</p>
+</div>
+<div class="flex flex-col items-center text-center group">
+<div class="w-32 h-32 rounded-3xl bg-blue-50 dark:bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm border border-blue-100 dark:border-slate-700">
+<span class="text-6xl">🧬</span>
+</div>
+<h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Probióticos</h3>
+<p class="text-sm text-slate-500 leading-relaxed px-4">Cultivos vivos para una flora intestinal saludable.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-soft-blue/30 dark:bg-background-dark relative" id="productos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="font-display font-extrabold text-4xl text-slate-900 dark:text-white mb-4">Nuestra Colección Completa</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-surface-dark rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100 dark:border-slate-800">
+<div class="w-full bg-purple-50 dark:bg-slate-800/50 rounded-2xl h-60 flex items-center justify-center mb-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-purple-100/50 dark:to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<img alt="Botella de gomitas moradas" class="h-48 object-contain transform group-hover:scale-110 group-hover:rotate-3 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_Lh97sN2UGg5KGR8rtUVOOZ38v9ODPVMDDoCistlHy5JmDaHTwQow_3biNxuSHE2CWk4z6itmDUdLU9igMlab_6mFpQsjVdpXrksoznSrayeCzvssj2VGQ53MuOHyHnbm5ZxGjQDKS74mzzSA2IliWB02BSvdgWYROjk7QENKG98ot7XaY5kYhqfMuinzs4aRcJ4H_w-m__DDq8xKyOE8dvpKq9XmoO8nPrheImH0Zk-bj_nbBFuMoSrms5Dijz2DfVxxO-4qB8Q"/>
+</div>
+<h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Night Gummies</h3>
+<p class="text-night-purple font-bold text-sm mb-4">Descanso Profundo</p>
+<div class="mt-auto w-full">
+<div class="flex justify-center items-baseline gap-2 mb-4">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">$25</span>
+<span class="text-sm text-slate-400 line-through">$30</span>
+</div>
+<button class="w-full py-3 rounded-xl bg-night-purple text-white font-bold hover:bg-purple-800 transition shadow-lg shadow-night-purple/20 flex items-center justify-center gap-2">
+                        Agregar <span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100 dark:border-slate-800">
+<div class="w-full bg-orange-50 dark:bg-slate-800/50 rounded-2xl h-60 flex items-center justify-center mb-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-orange-100/50 dark:to-orange-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<img alt="Botella de gomitas naranjas" class="h-48 object-contain transform group-hover:scale-110 group-hover:rotate-3 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpCE1_jPE7LKwkjB9tFoL9Tzv1c0S5rdXdrdXBsX9zdBCvwoqUGdxZDQ1MQkbGNLL9xom5QMyDYsGbfc33oGcmBCbgHYTA_hEwQpOrUONnf0W-S3zgqHHxJuooQVhdHnSo4TTvgFqXIlOzDFm7OYcsM5DG5azaZqfW0tIam0KXk28mK-rOUizCDpkKw5i3Q02x7JfMS_icmAF-hdTAqyKqk0Z5w9pi9Vf9ltOYTmW5L-upsdEuBqJ4FGB-qhmVDimeDAXwfNYKZF8"/>
+</div>
+<h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Morning Gummies</h3>
+<p class="text-morning-orange font-bold text-sm mb-4">Energía Natural</p>
+<div class="mt-auto w-full">
+<div class="flex justify-center items-baseline gap-2 mb-4">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">$25</span>
+<span class="text-sm text-slate-400 line-through">$30</span>
+</div>
+<button class="w-full py-3 rounded-xl bg-morning-orange text-white font-bold hover:bg-orange-600 transition shadow-lg shadow-morning-orange/20 flex items-center justify-center gap-2">
+                        Agregar <span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100 dark:border-slate-800">
+<div class="w-full bg-green-50 dark:bg-slate-800/50 rounded-2xl h-60 flex items-center justify-center mb-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-green-100/50 dark:to-green-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<img alt="Botella de gomitas verdes" class="h-48 object-contain transform group-hover:scale-110 group-hover:rotate-3 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaNTQUxdD61-PikLurogdUPxXV2TCSWAnIgIiL7jp91csIDxG570Za9N0LKf3RU4MCSCAiG3S44WV5SfzKNs7goGslXw49mFJ-bZfUrBZslzxbl2ra_gdH4mACamm4Var6J_xrQ6yUShLAztR_K7tR9sms8GG8UoMZTH199dwfbLiM1_Km9h2qigw91EwwHqKBianr2blD-cYqUYxiB_SoOzrh7YQHlecRnCrkRtfMrtFimk2xGzt3OegoKVzPjsb5cP6wJPN9oVI"/>
+</div>
+<h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Probiotic Gummies</h3>
+<p class="text-probiotic-green font-bold text-sm mb-4">Salud Digestiva</p>
+<div class="mt-auto w-full">
+<div class="flex justify-center items-baseline gap-2 mb-4">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">$20</span>
+<span class="text-sm text-slate-400 line-through">$25</span>
+</div>
+<button class="w-full py-3 rounded-xl bg-probiotic-green text-white font-bold hover:bg-green-700 transition shadow-lg shadow-probiotic-green/20 flex items-center justify-center gap-2">
+                        Agregar <span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100 dark:border-slate-800">
+<div class="w-full bg-blue-50 dark:bg-slate-800/50 rounded-2xl h-60 flex items-center justify-center mb-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-100/50 dark:to-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<img alt="Botella de gomitas azules" class="h-48 object-contain transform group-hover:scale-110 group-hover:rotate-3 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhQNOCc1BBYQH1Csho-Q6OYIXQkqFIAisOez-jlbcTxzr3NqRHrKUT8hMIhv9lT4Qq8jwdRedtgFjdDqE4bv9eeRxmauFb-XbzUSxIlDJMPDCA4M_D76PSlqTOP9Vg_Tt3mmNelyCF6jBb116YcYWvY2jHJ4Grh1iWWz26Lq7z2L2YkzE-WVZd2Pdg7SBr2zNeZtoA3JPR9AuO9pGq6Nn1Ud1Ttj1weI4rW5WHm_JEEqCHZ96Y-BCys7MFfNeHCrDBNt-v5pIDBDk"/>
+</div>
+<h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Multi-Vit Gummies</h3>
+<p class="text-multi-blue font-bold text-sm mb-4">Kids &amp; Family</p>
+<div class="mt-auto w-full">
+<div class="flex justify-center items-baseline gap-2 mb-4">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">$16</span>
+<span class="text-sm text-slate-400 line-through">$20</span>
+</div>
+<button class="w-full py-3 rounded-xl bg-multi-blue text-white font-bold hover:bg-blue-600 transition shadow-lg shadow-multi-blue/20 flex items-center justify-center gap-2">
+                        Agregar <span class="material-symbols-outlined text-sm">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white dark:bg-slate-900" id="combos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center mb-12">
+<h2 class="font-display font-black text-4xl text-slate-900 dark:text-white text-center mb-4">
+                    Bundles <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Exclusivos</span>
+</h2>
+<p class="text-slate-500 text-center">Ahorra más llevando tus combinaciones favoritas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+<div class="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden border border-slate-100 dark:border-slate-700">
+<div class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-20">AHORRA $10</div>
+<div class="w-full md:w-1/2">
+<img alt="Combo Día y Noche" class="w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL78ATGAWLhZn6QHlTjx-etTAtmPmX7Hiz8eUOwyq_nbq9ozeOhALqCWfviiGvXoY2ubGmqJDpBc9SBvefWS9oo_u1Ih8QMmbD37qVbvH39aE7V04_JD51JahRfpnDiMOdFwVKbM53suDvwXqXlW0pL62EtDtDJJ0mFaRCE7dxCkZCKFYsQm-Hq8P4-XJGPLdam2qJte1aBeDa_ZuuNEUYda6WgTuxrudmh4b4kUNvJJLRz3o90TczIbOyS_c98CDUfhrFa0_flYE"/>
+</div>
+<div class="w-full md:w-1/2 flex flex-col justify-center">
+<h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-2">Combo Día y Noche</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Energía AM + Descanso PM.</p>
+<div class="flex items-center gap-3 mb-6">
+<span class="text-4xl font-display font-black text-slate-900 dark:text-white">$40</span>
+<span class="text-lg text-slate-400 line-through">$50</span>
+</div>
+<a class="w-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white py-3 px-6 rounded-xl font-bold hover:bg-primary transition text-center shadow-lg" href="https://wa.me/593988949117">
+                            Comprar Combo
+                        </a>
+</div>
+</div>
+<div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-900 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden border border-slate-100 dark:border-slate-700">
+<div class="absolute top-4 left-4 bg-probiotic-green text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md z-20">AHORRA $6</div>
+<div class="w-full md:w-1/2 order-1 md:order-2">
+<img alt="Combo Bienestar Total" class="w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTWFzNhDeuKFYKNgyFmcCI4lIa1zX3Ah6KJqMkOUKYy-TTd-td2yPmPROp37ZgGGEZtxXt1cZMeJRWbNBW3AgAC-m_0bwT6ffvEPSy6dOE1AMv3dcN52FEJBm78C3HtINzitZgjDdhEpYuSNBJz-FLJdztVtgqFrZvq2XjM5AZjmXL6tX63eAVwqgJm8mOYmEIzJNLicuygzxWkYDlh6CipxsXsKkyQ8wGgYfePxj5VSRV7voTiIIg12l34UQXCbOR8MfmOdFjPWw"/>
+</div>
+<div class="w-full md:w-1/2 order-2 md:order-1 flex flex-col justify-center">
+<h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-2">Combo Bienestar</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Digestión + Vitaminas.</p>
+<div class="flex items-center gap-3 mb-6">
+<span class="text-4xl font-display font-black text-slate-900 dark:text-white">$35</span>
+<span class="text-lg text-slate-400 line-through">$41</span>
+</div>
+<a class="w-full bg-probiotic-green text-white py-3 px-6 rounded-xl font-bold hover:bg-green-700 transition text-center shadow-lg" href="https://wa.me/593988949117">
+                            Comprar Combo
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+<div class="col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-display font-bold text-lg">
+                            N
+                        </div>
+<span class="font-display font-bold text-xl text-slate-900 dark:text-white tracking-tight">NutriGummies</span>
+</div>
+<p class="text-slate-500 text-sm mb-6 max-w-sm">
+                        Suplementos premium diseñados para un estilo de vida moderno y saludable.
+                    </p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition text-slate-400" href="#">
+<i class="material-symbols-outlined text-sm">facebook</i>
+</a>
+<a class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition text-slate-400" href="#">
+<i class="material-symbols-outlined text-sm">camera_alt</i>
+</a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Enlaces Rápidos</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition" href="#productos">Todos los Productos</a></li>
+<li><a class="hover:text-primary transition" href="#combos">Combos &amp; Ofertas</a></li>
+<li><a class="hover:text-primary transition" href="#beneficios">Ingredientes</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-slate-900 dark:text-white mb-4">Contáctanos</h4>
+<div class="flex flex-col gap-3">
+<a class="flex items-center p-3 bg-green-50 dark:bg-slate-800 rounded-lg hover:bg-green-100 transition group border border-green-100 dark:border-slate-700" href="https://wa.me/593988949117">
+<span class="material-symbols-outlined text-green-600 mr-3">chat</span>
+<div>
+<span class="block text-xs text-slate-400">Ventas Directas</span>
+<span class="font-bold text-slate-700 dark:text-slate-200">0988 949 117</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
+<p>© 2023 NutriGummies. Todos los derechos reservados.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="hover:text-primary" href="#">Privacidad</a>
+<a class="hover:text-primary" href="#">Términos</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

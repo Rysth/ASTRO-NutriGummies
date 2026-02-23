@@ -1,53 +1,80 @@
-@import url("https://fonts.cdnfonts.com/css/inter");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;700&display=swap");
 
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: winter --default;
+
+/* ── Custom Theme ── */
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #4361ee;
+  --color-secondary: #4cc9f0;
+  --color-accent: #f72585;
+  --color-night-purple: #7209b7;
+  --color-morning-orange: #fb8500;
+  --color-probiotic-green: #38b000;
+  --color-multi-blue: #4895ef;
+
+  /* Soft Backgrounds */
+  --color-soft-pink: #ffedf2;
+  --color-soft-blue: #e0f2fe;
+  --color-soft-purple: #f3e8ff;
+
+  /* Surface Colors */
+  --color-background-light: #f8fafc;
+  --color-background-dark: #0f172a;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1e293b;
+
+  /* Fonts */
+  --font-display: "Nunito", sans-serif;
+  --font-body: "Quicksand", sans-serif;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 20px rgba(67, 97, 238, 0.3);
 }
 
-:root {
-  --CL-neutral-white: #f4faff;
-  --CL-neutral-black: #08090a;
-  --CL-accent-primary: #3251ff;
-  --CL-accent-secondary: #5975f5;
-}
+/* ── Base Styles ── */
 
 html {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
 }
 
-/* Background Colors */
-
-.bg-accent-primary {
-  background-color: var(--CL-accent-primary);
+body {
+  background-color: var(--color-background-light);
+  color: #1e293b;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
-.bg-accent-secondary {
-  background-color: var(--CL-accent-secondary);
+/* Material Symbols filled style */
+.filled {
+  font-variation-settings: "FILL" 1;
 }
 
-.bg-neutral-white {
-  background-color: var(--CL-neutral-white);
+/* ── Animations ── */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.bg-neutral-black {
-  background-color: var(--CL-neutral-black);
+.float-animation {
+  animation: float 5s ease-in-out infinite;
 }
 
-/* Text Colors */
-
-.text-accent-primary {
-  color: var(--CL-accent-primary);
-}
-
-.text-accent-secondary {
-  color: var(--CL-accent-secondary);
-}
-
-.text-neutral-white {
-  color: var(--CL-neutral-white);
-}
-
-.text-neutral-black {
-  color: var(--CL-neutral-black);
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #4361ee, #f72585);
 }

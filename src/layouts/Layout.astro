@@ -2,29 +2,101 @@
 import "@/styles/globals.css";
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "NutriGummies: Gomitas de vitaminas deliciosas y saludables para toda la familia en Guayaquil, Ecuador. Compra gomitas veganas, probióticos y multivitamínicos con envío a todo Ecuador.",
+} = Astro.props;
+
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || "https://nutrigummies.ec",
+);
 ---
 
 <!doctype html>
-<html lang="en" data-theme="winter">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Geo Targeting Ecuador / Guayaquil -->
+    <meta name="geo.region" content="EC-G" />
+    <meta name="geo.placename" content="Guayaquil" />
+    <meta name="geo.position" content="-2.1894;-79.8891" />
+    <meta name="ICBM" content="-2.1894, -79.8891" />
+    <meta name="language" content="es-EC" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:site_name" content="NutriGummies" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Google Fonts (Material Symbols) -->
     <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <title>{title}</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "NutriGummies",
+        description:
+          "Gomitas de vitaminas deliciosas y saludables para toda la familia en Guayaquil, Ecuador.",
+        url: "https://nutrigummies.ec",
+        telephone: "+593988949117",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Guayaquil",
+          addressRegion: "Guayas",
+          addressCountry: "EC",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: -2.1894,
+          longitude: -79.8891,
+        },
+        areaServed: {
+          "@type": "City",
+          name: "Guayaquil",
+        },
+        brand: {
+          "@type": "Brand",
+          name: "NutriGummies",
+        },
+        creator: {
+          "@type": "Organization",
+          name: "RysthDesign",
+          url: "https://www.rysthdesign.com",
+        },
+      })}
+    />
   </head>
-  <body class="h-screen">
-    <main class="h-full">
-      <slot />
-    </main>
+  <body
+    class="bg-background-light text-slate-800 font-body transition-colors duration-300"
+  >
+    <slot />
   </body>
 </html>
-<style is:global></style>

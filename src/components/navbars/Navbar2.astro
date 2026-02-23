@@ -1,0 +1,133 @@
+---
+// Navbar 2: Professional with Search
+// Feature-rich navbar with search, notifications, and user account
+---
+
+<nav class="bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo and Primary Nav -->
+      <div class="flex items-center space-x-8">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+            <i class="bx bx-buildings text-white text-2xl"></i>
+          </div>
+          <span class="text-xl font-bold text-gray-800">Company</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-1">
+          <a href="#" class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200 font-medium">
+            Home
+          </a>
+          <div class="relative group">
+            <button class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200 font-medium flex items-center gap-1">
+              Services
+              <i class="bx bx-chevron-down text-xl"></i>
+            </button>
+            <!-- Dropdown -->
+            <div class="absolute hidden group-hover:block w-48 bg-white shadow-lg rounded-lg py-2 mt-1 border border-gray-100 z-50">
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Web Development</a>
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Design</a>
+              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Consulting</a>
+            </div>
+          </div>
+          <a href="#" class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200 font-medium">
+            Our Projects
+          </a>
+          <a href="#" class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200 font-medium">
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side: Search, Notifications, User -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- Search -->
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="w-64 px-4 py-2 pl-10 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+          />
+          <i class="bx bx-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+        </div>
+
+        <!-- Notifications -->
+        <button class="relative p-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors">
+          <i class="bx bx-bell text-2xl"></i>
+          <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+        </button>
+
+        <!-- User Account -->
+        <div class="flex items-center gap-3 pl-4 border-l border-gray-200">
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+            <i class="bx bx-user text-white text-xl"></i>
+          </div>
+          <button class="text-gray-700 hover:text-blue-600 transition-colors">
+            <i class="bx bx-chevron-down text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          id="mobile-menu-btn-2"
+          type="button"
+          class="text-gray-700 hover:text-blue-600 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <i class="bx bx-menu text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu-2" class="hidden md:hidden bg-white border-t">
+    <div class="px-4 py-4 space-y-2">
+      <!-- Mobile Search -->
+      <div class="relative mb-4">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="w-full px-4 py-2 pl-10 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <i class="bx bx-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl"></i>
+      </div>
+
+      <a href="#" class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+        Home
+      </a>
+      <a href="#" class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+        Services
+      </a>
+      <a href="#" class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+        Our Projects
+      </a>
+      <a href="#" class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+        Contact
+      </a>
+
+      <div class="pt-4 border-t border-gray-200 mt-4">
+        <div class="flex items-center gap-3 px-3 py-2">
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+            <i class="bx bx-user text-white text-xl"></i>
+          </div>
+          <span class="text-gray-700 font-medium">My Account</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn2 = document.getElementById('mobile-menu-btn-2');
+  const mobileMenu2 = document.getElementById('mobile-menu-2');
+
+  mobileMenuBtn2?.addEventListener('click', () => {
+    mobileMenu2?.classList.toggle('hidden');
+  });
+</script>

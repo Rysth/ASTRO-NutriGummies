@@ -1,0 +1,223 @@
+---
+// Navbar 3: Creative with User Profile
+// Bold, colorful design with gradient backgrounds and social media integration
+---
+
+<nav class="bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-3">
+          <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
+            <i class="bx bx-rocket text-purple-600 text-2xl"></i>
+          </div>
+          <span class="text-2xl font-bold text-white drop-shadow-lg">Creative</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-2">
+        <a
+          href="#"
+          class="px-6 py-2 rounded-full text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-200 font-semibold"
+        >
+          Home
+        </a>
+        <a
+          href="#"
+          class="px-6 py-2 rounded-full text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-200 font-semibold"
+        >
+          Portfolio
+        </a>
+        <a
+          href="#"
+          class="px-6 py-2 rounded-full text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-200 font-semibold"
+        >
+          Services
+        </a>
+        <a
+          href="#"
+          class="px-6 py-2 rounded-full text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-200 font-semibold"
+        >
+          Blog
+        </a>
+      </div>
+
+      <!-- Right Side: Social + User Profile -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <!-- Social Links -->
+        <div class="flex items-center space-x-2 px-4 border-r border-white/30">
+          <a
+            href="#"
+            class="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center transition-all duration-200"
+            aria-label="Twitter"
+          >
+            <i class="bx bxl-twitter text-white text-xl"></i>
+          </a>
+          <a
+            href="#"
+            class="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center transition-all duration-200"
+            aria-label="Instagram"
+          >
+            <i class="bx bxl-instagram text-white text-xl"></i>
+          </a>
+          <a
+            href="#"
+            class="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center transition-all duration-200"
+            aria-label="LinkedIn"
+          >
+            <i class="bx bxl-linkedin text-white text-xl"></i>
+          </a>
+        </div>
+
+        <!-- User Profile Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-3 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-200">
+            <img
+              src="https://ui-avatars.com/api/?name=Irish+Ricaforte&background=fff&color=8b5cf6"
+              alt="Profile"
+              class="w-10 h-10 rounded-full border-2 border-white shadow-md"
+            />
+            <div class="text-left hidden xl:block">
+              <p class="text-white font-semibold text-sm">Irish Ricaforte</p>
+              <p class="text-white/80 text-xs">Premium Member</p>
+            </div>
+            <i class="bx bx-chevron-down text-white text-xl"></i>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl py-2 hidden group-hover:block z-50">
+            <div class="px-4 py-3 border-b border-gray-100">
+              <p class="text-gray-800 font-semibold">Irish Ricaforte</p>
+              <p class="text-gray-500 text-sm">irish@example.com</p>
+            </div>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 transition-colors">
+              <i class="bx bx-user text-purple-600 text-xl mr-3"></i>
+              My Profile
+            </a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 transition-colors">
+              <i class="bx bx-cog text-purple-600 text-xl mr-3"></i>
+              Settings
+            </a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 transition-colors">
+              <i class="bx bx-heart text-purple-600 text-xl mr-3"></i>
+              Favorites
+            </a>
+            <div class="border-t border-gray-100 mt-2 pt-2">
+              <a href="#" class="flex items-center px-4 py-3 text-red-600 hover:bg-red-50 transition-colors">
+                <i class="bx bx-log-out text-xl mr-3"></i>
+                Sign Out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="lg:hidden">
+        <button
+          id="mobile-menu-btn-3"
+          type="button"
+          class="text-white hover:bg-white/20 p-2 rounded-lg focus:outline-none backdrop-blur-sm"
+          aria-label="Toggle menu"
+        >
+          <i class="bx bx-menu text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu-3" class="hidden lg:hidden bg-white/10 backdrop-blur-lg">
+    <div class="px-4 pt-2 pb-4 space-y-2">
+      <!-- User Profile (Mobile) -->
+      <div class="flex items-center space-x-3 px-3 py-4 bg-white/20 rounded-xl mb-4">
+        <img
+          src="https://ui-avatars.com/api/?name=Irish+Ricaforte&background=fff&color=8b5cf6"
+          alt="Profile"
+          class="w-12 h-12 rounded-full border-2 border-white shadow-md"
+        />
+        <div>
+          <p class="text-white font-semibold">Irish Ricaforte</p>
+          <p class="text-white/80 text-sm">Premium Member</p>
+        </div>
+      </div>
+
+      <a
+        href="#"
+        class="block px-4 py-3 rounded-xl text-white hover:bg-white/20 backdrop-blur-sm transition-all font-semibold"
+      >
+        Home
+      </a>
+      <a
+        href="#"
+        class="block px-4 py-3 rounded-xl text-white hover:bg-white/20 backdrop-blur-sm transition-all font-semibold"
+      >
+        Portfolio
+      </a>
+      <a
+        href="#"
+        class="block px-4 py-3 rounded-xl text-white hover:bg-white/20 backdrop-blur-sm transition-all font-semibold"
+      >
+        Services
+      </a>
+      <a
+        href="#"
+        class="block px-4 py-3 rounded-xl text-white hover:bg-white/20 backdrop-blur-sm transition-all font-semibold"
+      >
+        Blog
+      </a>
+
+      <!-- Social Links (Mobile) -->
+      <div class="flex items-center justify-center space-x-4 pt-4 border-t border-white/30 mt-4">
+        <a
+          href="#"
+          class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
+          aria-label="Twitter"
+        >
+          <i class="bx bxl-twitter text-white text-xl"></i>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
+          aria-label="Instagram"
+        >
+          <i class="bx bxl-instagram text-white text-xl"></i>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"
+          aria-label="LinkedIn"
+        >
+          <i class="bx bxl-linkedin text-white text-xl"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Items -->
+      <div class="border-t border-white/30 mt-4 pt-4 space-y-2">
+        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-white/20 rounded-xl transition-all">
+          <i class="bx bx-user text-xl mr-3"></i>
+          My Profile
+        </a>
+        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-white/20 rounded-xl transition-all">
+          <i class="bx bx-cog text-xl mr-3"></i>
+          Settings
+        </a>
+        <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-white/20 rounded-xl transition-all">
+          <i class="bx bx-log-out text-xl mr-3"></i>
+          Sign Out
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn3 = document.getElementById('mobile-menu-btn-3');
+  const mobileMenu3 = document.getElementById('mobile-menu-3');
+
+  mobileMenuBtn3?.addEventListener('click', () => {
+    mobileMenu3?.classList.toggle('hidden');
+  });
+</script>

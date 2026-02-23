@@ -1,0 +1,103 @@
+---
+// Navbar 1: Modern Minimal
+// Clean, minimalist design with smooth transitions
+---
+
+<nav class="bg-white shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <i class="bx bx-code-alt text-white text-xl"></i>
+          </div>
+          <span class="text-xl font-bold text-gray-800">Brand</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+          Home
+        </a>
+        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+          Services
+        </a>
+        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+          About
+        </a>
+        <a href="#" class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">
+          Contact
+        </a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center">
+        <a
+          href="#"
+          class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          id="mobile-menu-btn-1"
+          type="button"
+          class="text-gray-700 hover:text-purple-600 focus:outline-none focus:text-purple-600"
+          aria-label="Toggle menu"
+        >
+          <i class="bx bx-menu text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu-1" class="hidden md:hidden bg-white border-t">
+    <div class="px-4 pt-2 pb-4 space-y-2">
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200 font-medium"
+      >
+        Home
+      </a>
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200 font-medium"
+      >
+        Services
+      </a>
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200 font-medium"
+      >
+        About
+      </a>
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors duration-200 font-medium"
+      >
+        Contact
+      </a>
+      <a
+        href="#"
+        class="block px-3 py-2 bg-purple-600 text-white rounded-lg text-center hover:bg-purple-700 transition-all duration-200 font-medium mt-4"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn1 = document.getElementById('mobile-menu-btn-1');
+  const mobileMenu1 = document.getElementById('mobile-menu-1');
+
+  mobileMenuBtn1?.addEventListener('click', () => {
+    mobileMenu1?.classList.toggle('hidden');
+  });
+</script>

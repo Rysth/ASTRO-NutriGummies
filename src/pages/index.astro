@@ -1,10 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import logo from "@/assets/images/brand/nutrigummies_brand_logo.png";
+import logo from "@/assets/images/brand/nutrigummies_brand_logo_horizontal.png";
 import imgNight from "@/assets/images/products/nutrigummies_night_gummies_ecuador_001.webp";
 import imgMorning from "@/assets/images/products/nutrigummies_morning_energy_ecuador_001.webp";
 import imgProbiotic from "@/assets/images/products/nutrigummies_probiotics_ecuador_001.webp";
 import imgMultiVit from "@/assets/images/products/nutrigummies_multivitamines_ninos_ecuador_001.webp";
+import imgComboNightMorning from "@/assets/images/bundles/combo_night_and_morning_nutrigumies_001.png";
+import imgComboProbioticos from "@/assets/images/bundles/combo_probioticos_nutrigumies_001.png";
 
 const title =
   "NutriGummies - Gomitas Saludables en Guayaquil, Ecuador | Vitaminas y Suplementos Naturales";
@@ -123,7 +125,7 @@ const whatsappLink = "https://wa.me/593988949117";
           <img
             src={logo.src}
             alt="NutriGummies Logo"
-            class="h-10 w-auto object-contain"
+            class="w-26 object-contain"
             width={logo.width}
             height={logo.height}
           />
@@ -213,7 +215,7 @@ const whatsappLink = "https://wa.me/593988949117";
   <!-- HERO SECTION                                -->
   <!-- ═══════════════════════════════════════════ -->
   <section
-    class="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-soft-purple via-white to-white"
+    class="relative pt-40 pb-32 overflow-hidden bg-gradient-to-b from-soft-purple via-white to-white"
   >
     <div
       class="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-night-purple/10 rounded-full blur-3xl"
@@ -222,12 +224,12 @@ const whatsappLink = "https://wa.me/593988949117";
     </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-28">
         <!-- Hero Text Content -->
         <div class="flex-1 text-center lg:text-left z-10">
           <!-- Rating -->
           <div
-            class="flex items-center justify-center lg:justify-start gap-1 mb-4"
+            class="flex items-center justify-center lg:justify-start gap-1 mb-6"
           >
             {
               Array(5)
@@ -244,20 +246,20 @@ const whatsappLink = "https://wa.me/593988949117";
           </div>
 
           <h1
-            class="font-display font-black text-5xl md:text-6xl lg:text-7xl leading-none mb-6 text-slate-900"
+            class="font-display font-black text-5xl md:text-6xl lg:text-7xl leading-tight mb-8 text-slate-900"
           >
             Descubre <br /><span class="text-night-purple">Night Gummies</span>
           </h1>
 
           <p
-            class="text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium"
+            class="text-xl text-slate-600 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium"
           >
             La forma más deliciosa de dormir mejor. Gomas veganas con sabor a
             uva para un descanso reparador. Disponibles en todo Ecuador.
           </p>
 
           <!-- Benefits Checklist -->
-          <div class="space-y-3 mb-10 max-w-md mx-auto lg:mx-0">
+          <div class="space-y-4 mb-12 max-w-md mx-auto lg:mx-0">
             {
               [
                 "Ayuda a conciliar el sueño más rápido",
@@ -300,7 +302,7 @@ const whatsappLink = "https://wa.me/593988949117";
 
           <!-- Trust Badges -->
           <div
-            class="mt-8 flex items-center justify-center lg:justify-start gap-6 opacity-70"
+            class="mt-10 flex items-center justify-center lg:justify-start gap-8 opacity-70"
           >
             <div class="flex flex-col items-center">
               <span class="material-symbols-outlined text-slate-800 mb-1"
@@ -373,7 +375,7 @@ const whatsappLink = "https://wa.me/593988949117";
   <!-- ═══════════════════════════════════════════ -->
   <!-- BENEFICIOS SECTION                          -->
   <!-- ═══════════════════════════════════════════ -->
-  <section class="py-20 bg-white" id="beneficios">
+  <section class="py-28 bg-white" id="beneficios">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="font-display font-extrabold text-4xl text-slate-900 mb-4">
@@ -385,7 +387,7 @@ const whatsappLink = "https://wa.me/593988949117";
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
         {
           benefits.map((item) => (
             <div class="flex flex-col items-center text-center group">
@@ -410,7 +412,7 @@ const whatsappLink = "https://wa.me/593988949117";
   <!-- ═══════════════════════════════════════════ -->
   <!-- PRODUCTOS SECTION                           -->
   <!-- ═══════════════════════════════════════════ -->
-  <section class="py-24 bg-soft-blue/30 relative" id="productos">
+  <section class="py-28 bg-soft-blue/30 relative" id="productos">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="font-display font-extrabold text-4xl text-slate-900 mb-4">
@@ -424,16 +426,16 @@ const whatsappLink = "https://wa.me/593988949117";
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {
           products.map((product) => (
-            <article class="bg-white rounded-3xl p-6 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100">
+            <article class="bg-white rounded-3xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100">
               <div
-                class={`w-full ${product.bgColor} rounded-2xl h-60 flex items-center justify-center mb-6 relative overflow-hidden`}
+                class={`w-full ${product.bgColor} rounded-2xl h-64 flex items-center justify-center mb-8 relative overflow-hidden`}
               >
                 <div
                   class={`absolute inset-0 ${product.overlayColor} opacity-0 group-hover:opacity-100 transition-opacity`}
                 />
                 <img
                   alt={product.alt}
-                  class="h-48 object-contain transform group-hover:scale-110 group-hover:rotate-3 transition duration-500"
+                  class="h-52 object-contain transform group-hover:scale-110 group-hover:rotate-3 transition duration-500"
                   src={product.image.src}
                   width={product.image.width}
                   height={product.image.height}
@@ -477,7 +479,7 @@ const whatsappLink = "https://wa.me/593988949117";
   <!-- ═══════════════════════════════════════════ -->
   <!-- COMBOS / BUNDLES SECTION                    -->
   <!-- ═══════════════════════════════════════════ -->
-  <section class="py-20 bg-white" id="combos">
+  <section class="py-28 bg-white" id="combos">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col items-center mb-12">
         <h2
@@ -490,7 +492,7 @@ const whatsappLink = "https://wa.me/593988949117";
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
         <!-- Combo Día y Noche -->
         <article
           class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden border border-slate-100"
@@ -502,11 +504,11 @@ const whatsappLink = "https://wa.me/593988949117";
           </div>
           <div class="w-full md:w-1/2">
             <img
-              alt="Combo Día y Noche NutriGummies - Energía y descanso en Guayaquil"
+              alt="Combo Día y Noche NutriGummies - Energía y descanso en Ecuador"
               class="w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition duration-500"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL78ATGAWLhZn6QHlTjx-etTAtmPmX7Hiz8eUOwyq_nbq9ozeOhALqCWfviiGvXoY2ubGmqJDpBc9SBvefWS9oo_u1Ih8QMmbD37qVbvH39aE7V04_JD51JahRfpnDiMOdFwVKbM53suDvwXqXlW0pL62EtDtDJJ0mFaRCE7dxCkZCKFYsQm-Hq8P4-XJGPLdam2qJte1aBeDa_ZuuNEUYda6WgTuxrudmh4b4kUNvJJLRz3o90TczIbOyS_c98CDUfhrFa0_flYE"
-              width="400"
-              height="300"
+              src={imgComboNightMorning.src}
+              width={imgComboNightMorning.width}
+              height={imgComboNightMorning.height}
               loading="lazy"
             />
           </div>
@@ -543,11 +545,11 @@ const whatsappLink = "https://wa.me/593988949117";
           </div>
           <div class="w-full md:w-1/2 order-1 md:order-2">
             <img
-              alt="Combo Bienestar NutriGummies - Digestión y vitaminas en Ecuador"
+              alt="Combo Bienestar NutriGummies - Probióticos y vitaminas en Ecuador"
               class="w-full h-auto object-contain drop-shadow-xl transform hover:scale-105 transition duration-500"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTWFzNhDeuKFYKNgyFmcCI4lIa1zX3Ah6KJqMkOUKYy-TTd-td2yPmPROp37ZgGGEZtxXt1cZMeJRWbNBW3AgAC-m_0bwT6ffvEPSy6dOE1AMv3dcN52FEJBm78C3HtINzitZgjDdhEpYuSNBJz-FLJdztVtgqFrZvq2XjM5AZjmXL6tX63eAVwqgJm8mOYmEIzJNLicuygzxWkYDlh6CipxsXsKkyQ8wGgYfePxj5VSRV7voTiIIg12l34UQXCbOR8MfmOdFjPWw"
-              width="400"
-              height="300"
+              src={imgComboProbioticos.src}
+              width={imgComboProbioticos.width}
+              height={imgComboProbioticos.height}
               loading="lazy"
             />
           </div>
@@ -590,7 +592,7 @@ const whatsappLink = "https://wa.me/593988949117";
             <img
               src={logo.src}
               alt="NutriGummies Logo"
-              class="h-8 w-auto object-contain"
+              class="h-10 w-auto object-contain"
               width={logo.width}
               height={logo.height}
             />
